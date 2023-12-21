@@ -1,12 +1,16 @@
 const express = require('express');
-
+const axios = require('axios');
 const app = express();
+const routes = require('./routes/index');
+const { serveSwaggerUI, setupSwaggerUI } = require('./config/service.config');
 
-app.use(express.json());
 
-app.get('/', (req, res) => {
-    console.log(req.query);
-    res.status(200).json("Server Works 123")
-})
+
+app.use(express.json()); 
+app.use('/api', routes); 
+
+
+// swagger
+app.use('/api-docs', serveSwaggerUI, setupSwaggerUI);
 
 module.exports = app;

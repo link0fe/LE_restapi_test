@@ -1,0 +1,47 @@
+paths:
+  "/api/search-products":
+    post:
+      summary: Search products
+      description: Endpoint to search for products.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductsRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductsResponse'
+components:
+  schemas:
+    ProductsRequest:
+      additionalProperties: false
+      type: object
+      properties:
+        query:
+          type: string
+          example: phone
+          required: true
+        page:
+          type: integer
+          example: 1
+          required: false
+    ProductsResponse:
+      additionalProperties: false
+      type: array
+      items:
+        type: object
+        properties:
+          title: 
+            type: string
+            example: string
+          description:
+            type: string
+            example: string
+          final_price:
+            type: number
+            example: 0.99
