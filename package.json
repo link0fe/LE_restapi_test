@@ -1,7 +1,7 @@
 {
   "name": "le_restapi_test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Test task for latvenergo",
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
