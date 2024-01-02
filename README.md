@@ -20,3 +20,5 @@ Test task for Latvenergo. This project is a REST API developed as part of a test
         - npm start
     - For development:
         - npm run dev
+    - For testing:
+        - npm test
